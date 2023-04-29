@@ -43,7 +43,7 @@ export default function LoginPage(){
 
 
   return (
-    <div>
+    <div className="min-h-screen flex items-center justify-center">
       <div className="bg-white bg-opacity-70  p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl text-orange-700 font-bold mb-6 text-center">Login</h2>
         <form onSubmit={handleSubmit}>

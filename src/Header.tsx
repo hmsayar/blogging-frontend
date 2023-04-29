@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import PostIcon from './icons/PostIcon';
 import { LoginContext } from "./contexts/loginContext";
 import UserDropdown from "./headercomponents/UserDropdown";
+import SearchBar from "./headercomponents/SearchBar";
 
 export default function Header() {
     const { auth } = useContext(LoginContext)
@@ -12,6 +13,7 @@ export default function Header() {
                 <Link to="/" className="text-xl font-bold">
                     <PostIcon />
                 </Link>
+                <SearchBar />
                 {
                     auth.login ?
                     <UserDropdown username={auth.username} /> :

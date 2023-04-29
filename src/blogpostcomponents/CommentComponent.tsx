@@ -14,6 +14,7 @@ interface Props {
         _id: string
     },
     refetch: () => void;
+    i:number;
 }
 
 const deleteComment = async ({ commentId, token }: { commentId: string; token:string }) => {
@@ -32,7 +33,7 @@ const deleteComment = async ({ commentId, token }: { commentId: string; token:st
     return response.json();
 };
 
-export default function CommentComponent({ id, commentContent, createdAt, commentOwner, refetch }: Props) {
+export default function CommentComponent({ id, commentContent, createdAt, commentOwner, refetch,i }: Props) {
     const {auth} = useContext(LoginContext)
 
     const mutation = useMutation(deleteComment, {
@@ -53,6 +54,7 @@ export default function CommentComponent({ id, commentContent, createdAt, commen
                     <DeleteIcon onClick={()=>(mutation.mutate({commentId:id, token:auth.accessToken}))} />:
                     null
                 }
+
             </div>
         </div>
     )

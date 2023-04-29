@@ -1,13 +1,15 @@
-import React from "react"
+import React, { useEffect, useState } from 'react';
+import HtmlToMarkdown from '../HtmlToMarkdown';
 
 interface Props {
     post: string;
 }
 
+
 export default function ContentComponent({ post }: Props) {
     return (
-        <div className="mb-8">
-            <p className="text-gray-800">{post}</p>
+        <div>
+            <HtmlToMarkdown htmlText={post} />
         </div>
-    )
+    );
 }
