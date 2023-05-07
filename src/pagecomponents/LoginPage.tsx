@@ -4,7 +4,7 @@ import {LoginContext} from "../contexts/loginContext"
 import {useNavigate} from "react-router-dom"
 
 async function loginUser ({ user, password }: { user: string; password: string }){
-    const response = await fetch('http://localhost:8080/login', {
+    const response = await fetch(`${import.meta.env.VITE_APP_BACK_URI}/users/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

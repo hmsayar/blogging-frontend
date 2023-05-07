@@ -18,7 +18,7 @@ interface Props {
 }
 
 const deleteComment = async ({ commentId, token }: { commentId: string; token:string }) => {
-    const response = await fetch(`http://localhost:8080/comments/${commentId}`, {
+    const response = await fetch(`${import.meta.env.VITE_APP_BACK_URI}/comments/${commentId}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",

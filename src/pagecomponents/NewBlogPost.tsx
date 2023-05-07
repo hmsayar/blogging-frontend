@@ -7,7 +7,7 @@ import { useMutation, useQueryClient  } from "react-query";
 import "react-quill/dist/quill.snow.css";
 
 async function createBlogPost(postData:any) {
-    const response = await fetch('http://localhost:8080/blogposts', {
+    const response = await fetch(`${import.meta.env.VITE_APP_BACK_URI}/blogposts`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
