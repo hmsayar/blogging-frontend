@@ -8,7 +8,7 @@ interface Props {
 }
 
 const postComment = async ({ postId, commentContent, token }: { postId: string; commentContent: string; token:string }) => {
-    const response = await fetch(`${import.meta.env.VITE_APP_BACK_URI}/comments/`, {
+    const response = await fetch(`${import.meta.env.VITE_APP_BACK_URI}/comments`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

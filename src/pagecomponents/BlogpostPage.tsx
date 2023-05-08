@@ -12,7 +12,7 @@ import Loading from "../Loading";
 
 async function fetchBlogPost(postId: string | undefined) {
     if (typeof postId === "string") {
-        const response = await fetch(`${import.meta.env.VITE_APP_BACK_URI}/blogposts/${postId}/`);
+        const response = await fetch(`${import.meta.env.VITE_APP_BACK_URI}/blogposts/${postId}`);
         if (!response.ok) {
             throw new Error("Failed to fetch blog post");
         }
@@ -21,7 +21,7 @@ async function fetchBlogPost(postId: string | undefined) {
 }
 
 const deleteBlogPost = async ({ postId, token }: { postId: string; token: string }) => {
-    const response = await fetch(`${import.meta.env.VITE_APP_BACK_URI}/blogposts/${postId}/`, {
+    const response = await fetch(`${import.meta.env.VITE_APP_BACK_URI}/blogposts/${postId}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
@@ -38,7 +38,7 @@ const deleteBlogPost = async ({ postId, token }: { postId: string; token: string
 
 async function fetchComments(postId: string | undefined, pageParam: number) {
     if (typeof postId === "string") {
-        const response = await fetch(`${import.meta.env.VITE_APP_BACK_URI}/comments/post/${postId}?page=${pageParam}/`);
+        const response = await fetch(`${import.meta.env.VITE_APP_BACK_URI}/comments/post/${postId}?page=${pageParam}`);
         if (!response.ok) {
             throw new Error("Failed to fetch comment");
         }
