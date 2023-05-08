@@ -5,7 +5,7 @@ import useDebounce from '../hooks/useDebounce';
 import useClickOutside from '../hooks/useClickOutside';
 
 const fetchBlogPosts = async (searchParam: string) => {
-    const res = await fetch(`${import.meta.env.VITE_APP_BACK_URI}/blogposts/search?searchParam=${searchParam}`);
+    const res = await fetch(`${import.meta.env.VITE_APP_BACK_URI}/blogposts/search?searchParam=${searchParam}/`);
     return res.json();
 };
 

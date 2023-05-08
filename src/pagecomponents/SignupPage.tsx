@@ -3,7 +3,7 @@ import { useMutation } from 'react-query';
 import {useNavigate} from "react-router-dom"
 
 async function signUpUser ({ user, password, email }: { user: string; password: string, email:string }){
-    const response = await fetch(`${import.meta.env.VITE_APP_BACK_URI}/users/signup`, {
+    const response = await fetch(`${import.meta.env.VITE_APP_BACK_URI}/users/signup/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

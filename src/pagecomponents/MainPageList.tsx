@@ -5,7 +5,7 @@ import PostIcon from '../icons/PostIcon';
 import Loading from '../Loading';
 
 async function fetchBlogPosts() {
-    const response = await fetch(`${import.meta.env.VITE_APP_BACK_URI}/blogposts/latest`);
+    const response = await fetch(`${import.meta.env.VITE_APP_BACK_URI}/blogposts/latest/`);
     if (!response.ok) {
         throw new Error('Failed to fetch blog posts');
     }
